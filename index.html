@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузинская кухня с бесплатной доставке в Москве. Заказ онлайн на дом или в офис</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" href="./images/icon.png">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <a class="header__logo" href="/"><img src="./images/logo.png"
+                            alt="Грузинский дворик | Доставка по Москве от 1000 рублей!"></a>
+                    <div class="header__cols-wrap">
+                        <div class="header__cols">
+                            <div class="header__col">
+                                <div class="header__tis">
+                                    <div class="header__tis-caption">
+                                        Доставка по Москве от 1000 рублей!
+                                    </div>
+                                    <div class="header__tis-content">
+                                        <a ng-click="toggleModal('delivery', false, true)">Режим работы</a>
+                                        • <a href="/#about">О компании</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--.header__col-->
+                            <div class="header__col">
+                                <a class="header__tel link" style="background-image:url( ./images/icon-phone.png );"
+                                    href="tel:+78005554013">8 (800) 555-40-13</a>
+                                <br><a class="header__schedule link-dashed"
+                                    ng-click="toggleModal('delivery', false, true)">Доставка бесплатно</a>
+                            </div>
+                            <!--.header__col-->
+                            <div class="header__col">
+                                <a style="background-image:url( );" class="header__login ng-hide" title="Войти"
+                                    ng-show="userManager.user.username == null" ng=""><i
+                                        ng-click="toggleModal('login')">Войти</i></a>
+                                <a href="/cabinet" class="header__login"
+                                    style="background-image:url( ./images/icon-cabinet.png );" title="Мой аккаунт"
+                                    ng-show="userManager.user.username != null"><i>Мой
+                                        аккаунт</i><span ng-bind="userManager.user.username | tel"
+                                        class="ng-binding">0030</span></a>
+                            </div>
+                            <!--.header__col-->
+                        </div>
+                        <!--.header__cols-->
+                    </div>
+                    <!--.header__cols-wrap-->
+                </div>
+                <!--.row-->
+            </div>
+            <!--.container-->
+        </header>
+        <nav class="navigation navigation__wrapper ng-isolate-scope" stick-callback="setSticked(sticked)"
+            stick-scroll="" offset="374" stick-class="fixed-nav">
+            <div class="container">
+                <div class="row">
+                    <button class="navigation__toggle" data-text-open="Меню" data-text-close="Закрыть">
+                        <i class="navigation__burger"></i>
+                    </button>
+                    <div style="float: right" class="mobile-visible">
+                        <ul class="navigation-mobile-actions">
+                            <li class="navigation__li-action"><a href="/actions">Акции</a></li>
+                        </ul>
+                    </div>
+                    <ul class="navigation__nav-mobile">
+
+                        <li ng-if="userManager.user.username != null" class="ng-scope"><a href="/cabinet">Личный
+                                кабиент</a></li><!-- end ngIf: userManager.user.username != null -->
+                        <li><a href="#" ng-click="toggleModal('delivery')">Доставка бесплатно</a></li>
+                        <li><a href="/#about">О компании</a></li>
+                    </ul>
+                    <ul class="navigation__menu ">
+                        <li class="13">
+                            <a href="/">Платтеры</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/sety">Сеты</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/hinkali">Хинкали</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/hachapuri">Хачапури</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/shashlyki">Шашлыки</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/18">Горячее</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/zakuski-i-salaty">Закуски</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/salaty">Салаты</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/supy">Супы</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/syry">Сыры</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/dachnye">Дачные</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/prazdnichnye-blyuda">Праздничное</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/deserty-i-torti">Десерты</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/sousy">Соусы</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/napitki">Напитки</a>
+
+                        </li>
+                        <li class="">
+                            <a href="/catalog/Catering">Кейтеринг</a>
+
+                        </li>
+                        <li class="navigation__li-action"><a href="/actions">Акции</a></li>
+                    </ul>
+                </div>
+                <!--.row-->
+            </div>
+            <!--.container-->
+        </nav>
+        <div id="section23">
+
+            <div class="container-wrapper">
+                <div class="container">
+                    <div>
+                        <div id="section23">
+
+
+                            <div class="">
+
+                                <div class="row">
+                                    <h2 class="caption-h2"
+                                        ng-show="filter(23, ['sectionLabelFilter', 'sectionNameFilter'])">Платтеры</h2>
+                                </div>
+
+                                <div class="thumbnails">
+                                    <div class="row">
+                                        <div class="thumbnail ng-scope"
+                                            ng-if="filter(534, ['posLabelFilter', 'posNameFilter'])"
+                                            style="height: 717px;">
+
+                                            <a href="/uploads/position/large_c7544587ceab7e16d6f995172302ca6e76f99159.jpg"
+                                                data-lightbox="position534"
+                                                data-title="На 2-4 персон ассорти люля-кебаб с бейби картофелем мини">
+                                                <div class="thumbnail__img" style="cursor: pointer;">
+                                                    <img preload="/uploads/position/large_c7544587ceab7e16d6f995172302ca6e76f99159.jpg"
+                                                        src="./images/platter/2.jpg"
+                                                        alt="На 2-4 персон ассорти люля-кебаб с бейби картофелем мини"
+                                                        class="ng-isolate-scope">
+                                                </div>
+                                            </a>
+
+
+                                            <div class="thumbnail__caption">На 2-4 персон ассорти люля-кебаб с бейби
+                                                картофелем мини</div>
+
+                                            <div class="thumbnail__description"
+                                                title="Курица, свинина, баранина, картофель бейби на мангале. Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи, салфетки">
+                                                <i>Курица, свинина, баранина, картофель бейби на мангале. Одноразовая
+                                                    посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи,
+                                                    салфетки</i>
+                                            </div>
+                                            <div class="thumbnail__weight ng-binding" ng-bind="posManager.getInfo(534)">
+                                                735гр</div>
+
+
+                                            <div class="thumbnail__bottom "
+                                                ng-click="!posManager.getActiveMod(534).quantity ? addItem(534, posManager.getPosition(534).multiplier) : ''">
+                                                <div class="thumbnail__price ng-scope"
+                                                    ng-if="!posManager.getPosition(534).has_mods">
+                                                    <span
+                                                        ng-bind="(posManager.getPosition(534).price * posManager.getPosition(534).multiplier) | number:0"
+                                                        class="ng-binding">2&nbsp;200</span> ₽
+                                                </div>
+
+                                                <div class="thumbnail__buy ng-scope"
+                                                    ng-if="!posManager.getPosition(534).has_mods">
+
+                                                    <div ng-show="!posManager.getPosition(534).quantity" class="">
+                                                        <span>Добавить</span>
+                                                        <div class="thumbnail__add-to-cart">В корзину</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sticker__wrap ng-scope" ng-controller="labelsCtrl">
+                                                <div ng-repeat="label in getPositionLabels('534')" class="ng-scope">
+                                                    <div class="sticker sticker__orangeLabel">
+                                                        Лучшее
+                                                    </div><br>
+                                                </div>
+                                                <div ng-repeat="label in getPositionLabels('534')" class="ng-scope">
+                                                    <div class="sticker sticker__purpleLabel" >
+                                                        Острое
+                                                    </div><br>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="thumbnail ng-scope"
+                                            ng-if="filter(552, ['posLabelFilter', 'posNameFilter'])"
+                                            style="height: 717px;">
+
+                                            <a href="/uploads/position/large_750610b775434af789d1c7d564ce2731b9377333.jpg"
+                                                data-lightbox="position552"
+                                                data-title="На 4-6 персон Закуски с морепродуктами мини (порционные) 1,8кг">
+                                                <div class="thumbnail__img" style="cursor: pointer;">
+                                                    <img preload="/uploads/position/large_750610b775434af789d1c7d564ce2731b9377333.jpg"
+                                                        src="./images/platter/2.jpg"
+                                                        alt="На 4-6 персон Закуски с морепродуктами мини (порционные) 1,8кг"
+                                                        class="ng-isolate-scope">
+                                                </div>
+                                            </a>
+
+
+                                            <div class="thumbnail__caption">На 4-6 персон Закуски с морепродуктами мини
+                                                (порционные) 1,8кг</div>
+
+                                            <div class="thumbnail__description"
+                                                title="Малосольная закуска из семги 0,6кг, Тигровые креветки 0,6кг, Красная икра в тарталетках 0,6кг. Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи, салфетки">
+                                                <i>Малосольная закуска из семги 0,6кг, Тигровые креветки 0,6кг, Красная
+                                                    икра в тарталетках 0,6кг. Одноразовая посуда в вакуумной упаковке
+                                                    PREMIUM качества: Тарелки, вилки, ножи, салфетки</i>
+                                            </div>
+                                            <div class="thumbnail__weight ng-binding" ng-bind="posManager.getInfo(552)">
+                                                1800гр</div>
+                                            <div class="thumbnail__bottom "
+                                                ng-click="!posManager.getActiveMod(552).quantity ? addItem(552, posManager.getPosition(552).multiplier) : ''">
+                                                <div class="thumbnail__price ng-scope"
+                                                    ng-if="!posManager.getPosition(552).has_mods">
+                                                    <span
+                                                        ng-bind="(posManager.getPosition(552).price * posManager.getPosition(552).multiplier) | number:0"
+                                                        class="ng-binding">9&nbsp;200</span> ₽
+                                                </div>
+                                                <div class="thumbnail__buy ng-scope"
+                                                    ng-if="!posManager.getPosition(552).has_mods">
+                                                  
+                                                    <div ng-show="!posManager.getPosition(552).quantity" class="">
+                                                        <span>Добавить</span>
+                                                        <div class="thumbnail__add-to-cart">В корзину</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sticker__wrap ng-scope" ng-controller="labelsCtrl">
+                                            </div>
+                                        </div>
+
+                                        <div class="thumbnail ng-scope"
+                                            ng-if="filter(553, ['posLabelFilter', 'posNameFilter'])"
+                                            style="height: 717px;">
+
+                                            <a href="/uploads/position/large_a8628085c1ae0f690b924e95df3b569ffdafdd60.jpg"
+                                                data-lightbox="position553"
+                                                data-title="На 4-6 персон Десертный сет мини (порционный) 2кг">
+                                                <div class="thumbnail__img" style="cursor: pointer;">
+                                                    <img preload="/uploads/position/large_a8628085c1ae0f690b924e95df3b569ffdafdd60.jpg"
+                                                        src="./images/platter/2.jpg"
+                                                        alt="На 4-6 персон Десертный сет мини (порционный) 2кг"
+                                                        class="ng-isolate-scope">
+                                                </div>
+                                            </a>
+
+
+                                            <div class="thumbnail__caption">На 4-6 персон Десертный сет мини
+                                                (порционный) 2кг</div>
+
+                                            <div class="thumbnail__description"
+                                                title="Ассорти из 4-х десертов с фруктами мини 0,7кг, Микс медовика и наполеона мини 0,7кг, Пахлава микс мини 0,6кг. Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи, салфетки">
+                                                <i>Ассорти из 4-х десертов с фруктами мини 0,7кг, Микс медовика и
+                                                    наполеона мини 0,7кг, Пахлава микс мини 0,6кг. Одноразовая посуда в
+                                                    вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи,
+                                                    салфетки</i>
+                                            </div>
+                                            <div class="thumbnail__weight ng-binding" ng-bind="posManager.getInfo(553)">
+                                                2000гр</div>
+
+                                            <!-- ngIf: posManager.getPosition(553).has_mods -->
+
+                                            <div class="thumbnail__bottom "
+                                                ng-click="!posManager.getActiveMod(553).quantity ? addItem(553, posManager.getPosition(553).multiplier) : ''">
+                                                <!-- ngIf: !posManager.getPosition(553).has_mods -->
+                                                <div class="thumbnail__price ng-scope"
+                                                    ng-if="!posManager.getPosition(553).has_mods">
+                                                    <span
+                                                        ng-bind="(posManager.getPosition(553).price * posManager.getPosition(553).multiplier) | number:0"
+                                                        class="ng-binding">4&nbsp;200</span> ₽
+                                                </div><!-- end ngIf: !posManager.getPosition(553).has_mods -->
+                                                <!-- ngIf: posManager.getPosition(553).has_mods -->
+
+                                                <!-- ngIf: posManager.getPosition(553).has_mods -->
+                                                <!-- ngIf: !posManager.getPosition(553).has_mods -->
+                                                <div class="thumbnail__buy ng-scope"
+                                                    ng-if="!posManager.getPosition(553).has_mods">
+                                                    <!-- <div ng-show="posManager.getPosition(553).quantity" class="ng-hide">
+                                                        <div class="thumbnail__buy-more">В корзине:</div>
+                                                        <div class="thumbnail__buy-more-control">
+                                                            <button class="thumbnail__buy-more-minus"
+                                                                ng-click="addItem(553, -posManager.getPosition(553).multiplier); $event.stopPropagation();"></button>
+                                                            <div class="thumbnail__buy-more-num ng-binding">0</div>
+                                                            <button class="thumbnail__buy-more-plus"
+                                                                ng-click="addItem(553, posManager.getPosition(553).multiplier);"></button>
+                                                        </div>
+                                                    </div> -->
+                                                    <div ng-show="!posManager.getPosition(553).quantity" class="">
+                                                        <span>Добавить</span>
+                                                        <div class="thumbnail__add-to-cart">В корзину</div>
+                                                    </div>
+                                                </div><!-- end ngIf: !posManager.getPosition(553).has_mods -->
+                                            </div>
+
+                                            <div class="sticker__wrap ng-scope" ng-controller="labelsCtrl">
+                                                <!-- ngRepeat: label in getPositionLabels('553') -->
+                                            </div>
+                                            <!--.sticker-wrap-->
+                                        </div>
+
+
+                                        <div class="thumbnail ng-scope"
+                                            ng-if="filter(649, ['posLabelFilter', 'posNameFilter'])"
+                                            style="height: 717px;">
+
+                                            <a href="/uploads/position/large_4757c9eed0c1b277f15dbdebb2248a888eeaa7a7.jpg"
+                                                data-lightbox="position649"
+                                                data-title="На 4-6 персон запеченные шампиньоны с сыром">
+                                                <div class="thumbnail__img" style="cursor: pointer;">
+                                                    <img preload="/uploads/position/large_4757c9eed0c1b277f15dbdebb2248a888eeaa7a7.jpg"
+                                                        src="./images/platter/2.jpg"
+                                                        alt="На 4-6 персон запеченные шампиньоны с сыром"
+                                                        class="ng-isolate-scope">
+                                                </div>
+                                            </a>
+
+
+                                            <div class="thumbnail__caption">На 4-6 персон запеченные шампиньоны с сыром
+                                            </div>
+
+                                            <div class="thumbnail__description"
+                                                title="Запеченные грибные шапочки шампиньонов с сыром сулугуни. Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи, салфетки">
+                                                <i>Запеченные грибные шапочки шампиньонов с сыром сулугуни. Одноразовая
+                                                    посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи,
+                                                    салфетки</i>
+                                            </div>
+                                            <div class="thumbnail__weight ng-binding" ng-bind="posManager.getInfo(649)">
+                                                960гр</div>
+
+                                            <!-- ngIf: posManager.getPosition(649).has_mods -->
+
+                                            <div class="thumbnail__bottom "
+                                                ng-click="!posManager.getActiveMod(649).quantity ? addItem(649, posManager.getPosition(649).multiplier) : ''">
+                                                <!-- ngIf: !posManager.getPosition(649).has_mods -->
+                                                <div class="thumbnail__price ng-scope"
+                                                    ng-if="!posManager.getPosition(649).has_mods">
+                                                    <span
+                                                        ng-bind="(posManager.getPosition(649).price * posManager.getPosition(649).multiplier) | number:0"
+                                                        class="ng-binding">1&nbsp;900</span> ₽
+                                                </div><!-- end ngIf: !posManager.getPosition(649).has_mods -->
+                                                <!-- ngIf: posManager.getPosition(649).has_mods -->
+
+                                                <!-- ngIf: posManager.getPosition(649).has_mods -->
+                                                <!-- ngIf: !posManager.getPosition(649).has_mods -->
+                                                <div class="thumbnail__buy ng-scope"
+                                                    ng-if="!posManager.getPosition(649).has_mods">
+                                                    <!-- <div ng-show="posManager.getPosition(649).quantity" class="ng-hide">
+                                                        <div class="thumbnail__buy-more">В корзине:</div>
+                                                        <div class="thumbnail__buy-more-control">
+                                                            <button class="thumbnail__buy-more-minus"
+                                                                ng-click="addItem(649, -posManager.getPosition(649).multiplier); $event.stopPropagation();"></button>
+                                                            <div class="thumbnail__buy-more-num ng-binding">0</div>
+                                                            <button class="thumbnail__buy-more-plus"
+                                                                ng-click="addItem(649, posManager.getPosition(649).multiplier);"></button>
+                                                        </div>
+                                                    </div> -->
+                                                    <div ng-show="!posManager.getPosition(649).quantity" class="">
+                                                        <span>Добавить</span>
+                                                        <div class="thumbnail__add-to-cart">В корзину</div>
+                                                    </div>
+                                                </div><!-- end ngIf: !posManager.getPosition(649).has_mods -->
+                                            </div>
+
+                                            <div class="sticker__wrap ng-scope" ng-controller="labelsCtrl">
+                                                <!-- ngRepeat: label in getPositionLabels('649') -->
+                                            </div>
+                                            <!--.sticker-wrap-->
+                                        </div>
+
+                                        <div class="thumbnail ng-scope"
+                                            ng-if="filter(628, ['posLabelFilter', 'posNameFilter'])"
+                                            style="height: 717px;">
+
+                                            <a href="/uploads/position/large_431a8d5f809aafc7c1931e55f801f910d988242b.jpg"
+                                                data-lightbox="position628"
+                                                data-title="На 2-4 персоны ассорти пахлавы мини">
+                                                <div class="thumbnail__img" style="cursor: pointer;">
+                                                    <img preload="/uploads/position/large_431a8d5f809aafc7c1931e55f801f910d988242b.jpg"
+                                                        src="./images/platter/2.jpg"
+                                                        alt="На 2-4 персоны ассорти пахлавы мини"
+                                                        class="ng-isolate-scope">
+                                                </div>
+                                            </a>
+
+
+                                            <div class="thumbnail__caption">На 2-4 персоны ассорти пахлавы мини</div>
+
+                                            <div class="thumbnail__description" title="Шоколадная пахлава: Рассыпчатое тесто, в сочетании с грецким орехом, шоколадом и миндальной мукой.
+    Классическая пахлава: Рассыпчатое тесто, в сочетании с грецким орехом и мёдом
+    Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки, вилки, ножи, салфетки"><i>Шоколадная пахлава:
+                                                    Рассыпчатое тесто, в сочетании с грецким орехом, шоколадом и
+                                                    миндальной мукой.<br>
+                                                    Классическая пахлава: Рассыпчатое тесто, в сочетании с грецким
+                                                    орехом и мёдом<br>
+                                                    Одноразовая посуда в вакуумной упаковке PREMIUM качества: Тарелки,
+                                                    вилки, ножи, салфетки</i></div>
+                                            <div class="thumbnail__weight ng-binding" ng-bind="posManager.getInfo(628)">
+                                                610гр</div>
+
+                                            <!-- ngIf: posManager.getPosition(628).has_mods -->
+
+                                            <div class="thumbnail__bottom "
+                                                ng-click="!posManager.getActiveMod(628).quantity ? addItem(628, posManager.getPosition(628).multiplier) : ''">
+                                                <!-- ngIf: !posManager.getPosition(628).has_mods -->
+                                                <div class="thumbnail__price ng-scope"
+                                                    ng-if="!posManager.getPosition(628).has_mods">
+                                                    <span
+                                                        ng-bind="(posManager.getPosition(628).price * posManager.getPosition(628).multiplier) | number:0"
+                                                        class="ng-binding">1&nbsp;200</span> ₽
+                                                </div><!-- end ngIf: !posManager.getPosition(628).has_mods -->
+                                                <!-- ngIf: posManager.getPosition(628).has_mods -->
+
+                                                <!-- ngIf: posManager.getPosition(628).has_mods -->
+                                                <!-- ngIf: !posManager.getPosition(628).has_mods -->
+                                                <div class="thumbnail__buy ng-scope"
+                                                    ng-if="!posManager.getPosition(628).has_mods">
+                                                    <!-- <div ng-show="posManager.getPosition(628).quantity" class="ng-hide">
+                                                        <div class="thumbnail__buy-more">В корзине:</div>
+                                                        <div class="thumbnail__buy-more-control">
+                                                            <button class="thumbnail__buy-more-minus"
+                                                                ng-click="addItem(628, -posManager.getPosition(628).multiplier); $event.stopPropagation();"></button>
+                                                            <div class="thumbnail__buy-more-num ng-binding">0</div>
+                                                            <button class="thumbnail__buy-more-plus"
+                                                                ng-click="addItem(628, posManager.getPosition(628).multiplier);"></button>
+                                                        </div>
+                                                    </div> -->
+                                                    <div ng-show="!posManager.getPosition(628).quantity" class="">
+                                                        <span>Добавить</span>
+                                                        <div class="thumbnail__add-to-cart">В корзину</div>
+                                                    </div>
+                                                </div><!-- end ngIf: !posManager.getPosition(628).has_mods -->
+                                            </div>
+
+                                            <div class="sticker__wrap ng-scope" ng-controller="labelsCtrl">
+                                                <!-- ngRepeat: label in getPositionLabels('628') -->
+                                            </div>
+                                            <!--.sticker-wrap-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container container-thumbnail">
+            <h1>«Грузинский дворик»: бесплатная доставка в Москве свежайших блюд кухни Грузии</h1>
+            <p>Если вас интересует быстрая доставка хинкали, хачапури, сациви, пхали или любого другого блюда Грузии на
+                дом, «Грузинский дворик» — отличное место, чтобы заказать все эти вкусности, получив гарантию их
+                отменного качества и идеальной свежести!</p>
+
+            <h2>Грузинская кухня в Москве: готовим с любовью, доставляем бесплатно!</h2>
+
+            <p>Наши блюда не оставят равнодушным даже самого придирчивого скептика и истинного знатока грузинской кухни
+                в Москве, а бесплатная доставка порадует абсолютно любого. И все потому, что мы готовим с любовью и
+                заботой, используя национальные рецепты, знакомые нам с самого детства, и свежайшие продукты высшего
+                качества, многие из которых поставляются нам прямо из Грузии.</p>
+
+            <p>Бесплатная доставка — это наш комплимент каждому, кто решил приобщиться к грузинской кухне или уже давно
+                является ее почитателем. Но это не единственный бонус, который мы подготовили нашим заказчикам! Наша
+                команда регулярно организовывает интересные и выгодные для клиентов акции, с условиями которых можно
+                ознакомиться в специальном разделе сайта.</p>
+
+            <h2>Почему 9 из 10 хотя бы раз заказавших грузинские блюда становятся нашими постоянными клиентами?</h2>
+
+            <p>Ответ прост: им нравятся преимущества!</p>
+
+            <ul>
+                <li><strong>Отменное качество.</strong> Мы внимательно следим за качеством на всех этапах, начиная от
+                    приемки продуктов и заканчивая отправкой готового заказа.</li>
+                <li><strong>Приятные цены.</strong> Стоимость вкуснейших блюд грузинской кухни у нас каждому по карману.
+                </li>
+                <li><strong>Бесплатная доставка.</strong> Быстрая доставка хачапури, хинкали, салатов, соусов, десертов
+                    грузинской кухни на дом или в офис производится без дополнительной оплаты.</li>
+                <li><strong>Выгодные акции.</strong> Мы заботимся о том, чтобы наши клиенты могли не только наслаждаться
+                    качественной и вкусной грузинской кухней, но и экономить при этом.</li>
+                <li><strong>Удобная оплата.</strong> Вы можете рассчитаться электронными деньгами или банковской картой
+                    прямо на нашем сайте.</li>
+            </ul>
+
+            <p>Добавьте ко всему этому отличный вкус блюд, а также нашу заботу о каждом клиенте и вы поймете, что
+                «Грузинский дворик» — лучшее место для заказа доставки!</p>
+        </div>
+        <div class="about__wrap" style="background-image:url( ./images/about/bg.jpg );">
+            <div class="container">
+                <div class="row">
+                    <div class="about">
+                        <div class="about__content">
+                            <h3 class="about__content-caption">«Грузинский дворик» в Москве: вековые традиции
+                                гостеприимной Грузии</h3>
+                            <div class="about__content-quote">
+
+                                «Когда делаешь свое дело с душой — это уже не просто бизнес, это нечто гораздо большее.
+                                Наши повара, кулинары, кондитеры — настоящие волшебники, потому что виртуозно передают
+                                потрясающий вкусовой букет каждого национального блюда. Неудивительно, что практически
+                                любой, кто хотя бы раз сделал у нас заказ, возвращается снова и снова — настоящая
+                                грузинская кухня, приготовленная с любовью, моментально завоевывает сердца поклонников!»
+                                <div class="about__content-quote-who">— Давид Микава, основатель компании «Грузинский
+                                    дворик»</div>
+                            </div>
+
+                            <p class="about__content-text">«Грузинский дворик» открывался как небольшое семейное
+                                предприятие. Его основатели — грузинская семья, постоянно проживающая в Москве. Каждый
+                                член коллектива не понаслышке знаком с национальной кухней своих предков: все они с
+                                детства любят вкус грузинских блюд, приготовленных по старинным рецептам, и каждый день
+                                воспроизводят его! &nbsp; <a href="/about"><b>Подробнее...</b></a></p>
+                        </div>
+                        <!--.about__content-->
+                        <div class="about__aside">
+                            <a href="/uploads/images/e60e25750816ab3a855c2438ad18adc8606d1d42.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                            <a href="/uploads/images/c846066815140b90ced07b94817ac8a7ff2d5802.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                            <a href="/uploads/images/36b9586d190da9b40f0616adbc7aa1e65ecf866d.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                            <a href="/uploads/images/719eb6e080573aa4fdf4820fb61b0d6359cd0266.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                            <a href="/uploads/images/6bab59dfd2ae52ac81fbded4e89af83022098122.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                            <a href="/uploads/images/3adf7bfb4747d3f1e966613fe7fac473144834b8.jpg"
+                                data-lightbox="gallery" data-title="Грузинская доставка">
+                                <img src="./images/about/1.jpg" alt="Грузинская доставка">
+                            </a>
+                        </div>
+                        <!--.about__aside-->
+                    </div>
+                    <!--.about-->
+                </div>
+                <!--.row-->
+            </div>
+            <!--.container-->
+        </div>
+        <cart show-position="true">
+            <div class="container-wrapper bonus-line-wrapper ng-scope" ng-if="!citySelected"
+                style="position: absolute; bottom: 224px;">
+                <div class="container bonus-line">
+                    <div class="bonus-line-cart c-row ">
+                        <a class="bonus-line-cart-link ng-binding" ng-click="modal.toggle('cart')">2 позиции</a>
+                        <div class="bonus-line-cart-price ng-binding" ng-click="modal.toggle('cart')">0 ₽</div>
+                        <a href="/order" class="btn bonus-line-cart-btn" >Оформить заказ</a>
+                        <div class="cart-min-modal-wrap am-collapse ng-hide ng-isolate-scope" modal="showAddedBubble">
+                        </div>
+                    </div>
+
+                    <div class="bonus-line-content ng-scope" ng-controller="giftPositionsCtrl">
+                        <div class="bonus-line-progress" style="width: 0%"></div>
+                        <div ng-repeat="sum in giftManager.config.sums"
+                            class="bonus-line-progress-border bonus-line-progress-border-1" style="right: 40%"
+                            ng-bind="sum.value">1500</div>
+                        <div ng-repeat="sum in giftManager.config.sums"
+                            class="bonus-line-progress-border bonus-line-progress-border-2" style="right: 20%"
+                            ng-bind="sum.value">2000</div>
+                        <div ng-repeat="sum in giftManager.config.sums"
+                            class="bonus-line-progress-border bonus-line-progress-border-3" style="right: 0%"
+                            ng-bind="sum.value">2500</div>
+                        <a class="bonus-line-progress-link" ng-click="modal.toggle('giftPositions')">Ваш бонус</a>
+
+
+                        <!--.c-row-->
+                    </div>
+
+
+                </div>
+
+            </div>
+        </cart>
+        <div class="footer-wrapper container-wrapper">
+            <footer class="footer container">
+                <div class="footer-copy-tel" style="background:url( ./images/icon.png ) no-repeat 0 59px;">
+                    <div class="footer-col-1">
+                        <div class="footer-copyright">2022 «Грузинский дворик»</div>
+                        <div class="footer-copyright-description">Доставка по Москве от 1000 рублей!</div>
+                    </div>
+                 
+                    <div class="footer-col-2">
+                        <div class="footer-tel">
+                            <a href="tel:+78005554013" class="header-tel">8 (800) 555-40-13</a>
+                            <br><a href="mailto:zakaz5555@inbox.ru" class="header-tel">zakaz5555@inbox.ru</a>
+                        </div>
+                    </div>
+                    <!--.footer-col-2-->
+                </div>
+                <!--.footer-copy-tel-->
+
+
+
+                <div class="footer-pay-social">
+                    <div class="footer-social" style="margin-bottom: 10px;">
+                        <a href="https://apps.apple.com/us/app/georgian-food-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B5%D0%B4%D1%8B/id1365519118"
+                            target="_blank">
+                            <img src="./images/icon-appstore.png" style="width: 109px;"
+                                src="/uploads/images/5cbd34974e3f6a8abc93f706a6de3d8c35c6895b.png">
+
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.georgianfood.georgianfood"
+                            target="_blank">
+                            <img src="./images/icon-googleplay.png" style="width: 109px;"
+                                src="/uploads/images/5c7d07955bde75c1ec37ced8e5db3fffb0142287.png">
+                        </a>
+                    </div>
+
+                    <div class="footer-pay">
+                        <a href="terms-of-payment">Принимаем оплату картами<br>и электронными
+                            деньгами
+                        </a>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="https://vk.com/georgian_food_ru" target="_blank">
+                            <img src="./images/icon-wk.png" alt="vk.com" width="52px"
+                                src="/uploads/images/fb778d45f44fbe72fa5c44cee62c851bc099312a.png"><span></span>
+                        </a>
+
+
+
+                        <a href="https://ok.ru/group/53931586355410" target="_blank"><img src="./images/icon-ok.png"
+                                alt="ok.com"
+                                src="/uploads/images/672742b443147564aded8e94233e1b21c58108bb.png"><span></span></a>
+                        <a href="https://www.youtube.com/channel/UC1_pclH8D8GpBs4zZMqSSLg" target="_blank"><img
+                                src="./images/icon-youtube.png" alt="ok.com"
+                                src="/uploads/images/c271f79e561b0c30419037426c77a5f20c529143.png"><span></span></a>
+                    </div>
+                </div>
+               </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

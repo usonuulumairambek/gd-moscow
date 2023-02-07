@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши клиенты</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            background-color: #000;
+
+        }
+   
+.main__about-button button {
+     border: 2px solid #ffc600;
+width: 251px;
+    height: 56px;
+    background: transparent;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-size: 18px;
+ font-family: 'PT Sans Narrow',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 600;
+    border-width: 2px;
+    opacity: 0.9;
+
+}
+
+.main__about-button button:hover {
+    background-color: #E9B403;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+
+
+
+.main__about-button {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 50px;
+}
+
+
+
+
+.pop_up {
+    transform: translateY(-100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 50000;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+
+}
+
+.pop_up.active {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    transition: 0.3s ease-in-out;
+    transform: translateY(0%);
+
+}
+
+.pop_up_container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.pop_up_body h3 {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+margin: 10px 0;
+}
+.pop_up_body p {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    margin: 10px 0 20px 0;
+
+
+}
+
+.pop_up_body {
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 40px 45px;
+    position: relative;
+    z-index: 200;
+}
+
+.pop_up_body input {
+    width: 90%;
+    height: 55px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    background: transparent;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    padding:0 20px;
+    outline: none;
+}
+.pop_up_close {
+    cursor: pointer;
+    font-size: 40px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.pop_up_body button {
+    margin-top: 25px;
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color: #E9B403;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    transition: 0.5s;
+    font-weight: 500;
+
+}
+.from__checkbox{
+    font-family: 'Open Sans', sans-serif;
+font-size: 15px;
+}
+
+.pop_up_body button:hover {
+    background-color: #E9B403;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+    </style>
+</head>
+
+<body>
+    <div class="main__about-button">
+        <button id="open_pop_up">Заказать проект</button>
+    </div>
+           <div class="pop_up" id="pop_up">
+               <div class="pop_up_container">
+                   <form action="#" method="post" data-id="call-form" class="pop_up_body">
+                    <h3>
+                     Заказать обратный <br> звонок
+                    </h3>
+                       <p>
+                        Заполните поля формы ниже и мы вам перезвоним
+
+                       </p>
+        <input placeholder="Ваше имя" name="name" type="text"> <br>
+        <input placeholder="+7 999 999 99 99" name="phone" type="number"> <br>
+        <br>
+                       <div class="error-box">
+                        <div class="from__checkbox">
+                            <input type="checkbox" style="width: 4%; height: 17px;">
+                            Я согласен (на) на обработку персональных данных
+                        </div>
+                       </div>
+        <button type="submit">Отправить</button>
+                       <div class="pop_up_close" id="pop_up_close">
+                            ✖
+                       </div>
+                   </form>
+               </div>
+           </div>
+           <script>
+let popupbutton = document.getElementById("pop_up_button");
+const openPopUp = document.getElementById("open_pop_up");
+const closePopUp = document.getElementById("pop_up_close");
+// const closePopUp2 = document.getElementById("pop_up_close2");
+
+const popUp = document.getElementById("pop_up");
+
+if(openPopUp) {
+  openPopUp.addEventListener("click", function (e) {
+    e.preventDefault();
+    popUp.classList.add("active");
+    console.log("dsd");
+  });
+}
+
+if(closePopUp) {
+  closePopUp.addEventListener("click", function (e) {
+    popUp.classList.remove("active");
+
+  });
+}
+
+// closePopUp2.addEventListener("click", function (e) {
+//     popUp.classList.remove("active");
+    
+//   });
+           </script>
+</body>
+
+</html>
